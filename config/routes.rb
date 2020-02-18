@@ -6,7 +6,6 @@ Rails.application.routes.draw do
       get :tweets
     end
   end
-  resources :sessions,      only: [:new, :create, :destroy]
   resources :tweets,        only: [:index, :create, :destroy]
   resources :relationships, only: [:create, :destroy]
   get 'users/:id/follow/:following_id', to: 'users#follow'
