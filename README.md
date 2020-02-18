@@ -12,7 +12,7 @@ This App has following features in it
 This App provides API facility to do the following
 
 1. User tweets ( tweets from following users )
-
+		curl http://localhost:3000/users/:id/tweets
 		```curl http://localhost:3000/users/2/tweets```
 
 		{
@@ -49,7 +49,7 @@ This App provides API facility to do the following
 		}
 
 2. user details
-
+	curl http://localhost:3000/users/id.json
 	```curl http://localhost:3000/users/1.json```
 
 	{
@@ -72,17 +72,19 @@ This App provides API facility to do the following
 	}
 
 3. FOllow a user
+  curl http://localhost:3000/users/:id/follow/:following_id
 	curl http://localhost:3000/users/1/follow/2
 	{"message":"you are following now !"}
 
 4. unfollow User
-
+	curl http://localhost:3000/users/:id/unfollow/:following_id
 	curl http://localhost:3000/users/1/unfollow/2
 
 	{"message":"successfully unfollwed !"}
 
 
 5. If Already following
-
+	curl http://localhost:3000/users/:id/follow/:following_id
 	curl http://localhost:3000/users/1/follow/2
+
 	{"message":"Already following that user !"}
