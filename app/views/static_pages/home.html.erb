@@ -1,10 +1,29 @@
-<h2>Twitter  dashboard</h2>
 <p>You have tweeted <%= @tweets.count %> tweets </p>
-
-<h4> Followers </h4>
-
-<p> You have <%= @followers.count %></p>
-
-<h4> Followings </h4>
-
-<p> You are following <%= @followings.count %></p>
+<div class="row">
+  <div class="col-md-4">
+    <aside class="col-md-4">
+     <%= render partial: "shared/tweet_form" %>
+    </aside>
+    <div class="timeline">
+      <h2 class="title">Tweets</h2>
+      <% if @feed_items.any? %>
+      <li class="tweets">
+        <%= render partial: 'shared/feed_item', collection: @feed_items %>
+      <!--   <div class="paginate">
+          <%#= will_paginate @feed_items, renderer: BootstrapPagination::Rails %>
+        </div> -->
+      </li>
+      <% end %>
+    </div>
+  </div>
+  <div class="col-md-4">
+    <h4> Followers </h4>
+    <p> You have <%= @followers.count %></p>
+    <%= render partial: "shared/follower", collection: @followers %>
+  </div>
+  <div class="col-md-4">
+    <h4> Followings </h4>
+    <p> You are following <%= @followings.count %></p>
+    <%= render partial: "shared/following", collection: @followings %>
+  </div>
+</div>
