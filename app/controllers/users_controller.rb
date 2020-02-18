@@ -4,7 +4,8 @@ class UsersController < ApplicationController
   before_action :check_following_list, only: [:follow ]
 
   def tweets
-    @tweets = @user.feed
+    sort = params[:sort]&.to_sym || :asc
+    @tweets = @user.feed.order(sort)
   end
 
   def show

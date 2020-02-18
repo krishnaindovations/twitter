@@ -12,6 +12,12 @@ This App has following features in it
 This App provides API facility to do the following
 
 1. User tweets ( tweets from following users )
+		curl http://localhost:3000/users/1/tweets?sort="asc"
+
+		or
+
+		curl http://localhost:3000/users/1/tweets?sort="desc"
+
 		curl http://localhost:3000/users/:id/tweets
 		```curl http://localhost:3000/users/2/tweets```
 
