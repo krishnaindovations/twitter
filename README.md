@@ -94,3 +94,23 @@ This App provides API facility to do the following
 	curl http://localhost:3000/users/1/follow/2
 
 	{"message":"Already following that user !"}
+
+
+
+* Rails Version Used -> 6.0.2.1
+* ruby version -> ruby 2.6.3p62
+
+added Seed data to seed.rb file
+
+$ rake db:create
+$ rake db:migrate
+$ rake db:seed
+$ rails s* seed is added
+
+## Existing user to login
+
+* user Id : test1@email.com
+* password : 123456
+
+* user Id : test2@email.com
+* password : 123456

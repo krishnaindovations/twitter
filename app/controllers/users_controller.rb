@@ -1,7 +1,11 @@
 class UsersController < ApplicationController
-  before_action :get_user
+  before_action :get_user, except: [:index]
   before_action :get_following_user, only: [:follow, :unfollow]
   before_action :check_following_list, only: [:follow ]
+
+  def index
+    @users = User.all
+  end
 
   def tweets
     sort = params[:sort]&.to_sym || :asc

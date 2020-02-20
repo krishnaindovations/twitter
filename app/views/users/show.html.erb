@@ -1,10 +1,1 @@
-<h4><%= @user.email %></h4>
-
-<p>Followers : <%= @user.followers.count %></p>
-<p>Following : <%= @user.following.count %></p>
-
-<% if current_user.following?(@user) %>
-  <%= render partial: "shared/unfollow", locals: { user: @user } %>
-<% else %>
-  <%= render partial: "shared/follow", locals: { user: @user } %>
-<% end %>
+<%= render partial: "shared/user", locals: { user: @user } %>
